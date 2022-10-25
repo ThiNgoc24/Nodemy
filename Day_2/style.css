@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --pink-color: #f2726a;
+}
+
+body{
+    background: linear-gradient(45deg, #00853e, #50c878);;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.card{
+    background-color: #242628;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0 30px;
+}
+
+.avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--pink-color);
+    margin: auto;
+    transform: translateY(20px);
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.avatar img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;/*Để ảnh luôn được căn giữa*/
+}
+
+.name{
+    margin-top: 40px;
+    /* margin-bottom: 8px; */
+    font-size: 24px;
+}
+
+.job{
+    color: var(--pink-color);
+}
+
+.list-social{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+    padding: 0 20px;
+}
+
+.list-social a{
+    color: #fff;
+    font-size: 18px;
+    transition: 0.5s;
+}
+
+.list-social a:hover{
+    color: var(--pink-color);
+}
+
+button{
+    border: 1px solid var(--pink-color);
+    background: transparent;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: var(--pink-color);
+}
+
+.avatar:hover{
+    width: 100%;
+    height: 100%;
+    transform: none;
+    border: none;
+    border-radius: unset;
+}
