@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <button class="btn-open-model">Open model</button>
+    <div class="model hide">
+        <div class="box-model">
+            <div class="header-model">
+                <p>welcome to</p>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="content-model">
+                <h2>MODEL</h2>
+                <p>Đây là phần nội dung của model</p>
+            </div>
+
+            <div class="footer-model">
+                <button>Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var model = document.querySelector(".model")
+        var btnOpenModel = document.querySelector("btn-open-model");
+        var iconClose = document.querySelector(".header-model i");
+        var buttonClose = document.querySelector(".footer-model button");
+
+        function toggleModel(e){
+            model.classList.toggle('hide');
+        }
+        //classList: tên class mà cta toggle?
+        //toggle --> ấn vào nó hiện, ấn vào nó ẩn;
+
+        btnOpenModel.addEventListener('click', toggleModel);
+        // iconClose.addEventListener('click', toggleModel);
+        // buttonClose.addEventListener('click', toggleModel);
+        //target: mục tiêu, đích đến
+        //Phân biệt giữa current-target và target??
+        //Trong video ngta bảo là: Target: là cái mà mình vừa ấn vào. currentTarget là cái target gần nhất?
+        // model.addEventListener('click', function(e){
+        // if (e.target == e.currentTarget) toggleModal();
+        // });
+    </script>
+</body>
+</html>
