@@ -15,6 +15,7 @@
             <div class="header-model">
                 <p>welcome to</p>
                 <i class="fa-solid fa-xmark"></i>
+                <h2 id="demo"></h2>
             </div>
 
             <div class="content-model">
@@ -30,7 +31,7 @@
 
     <script>
         var model = document.querySelector(".model")
-        var btnOpenModel = document.querySelector("btn-open-model");
+        var btnOpenModel = document.querySelector(".btn-open-model");
         var iconClose = document.querySelector(".header-model i");
         var buttonClose = document.querySelector(".footer-model button");
 
@@ -40,15 +41,36 @@
         //classList: tên class mà cta toggle?
         //toggle --> ấn vào nó hiện, ấn vào nó ẩn;
 
+        // var a = document.getElementById('demo');
+
+        // function changes(){
+        //     a.textContent = 'abcdef';
+        // }
+
         btnOpenModel.addEventListener('click', toggleModel);
-        // iconClose.addEventListener('click', toggleModel);
-        // buttonClose.addEventListener('click', toggleModel);
-        //target: mục tiêu, đích đến
-        //Phân biệt giữa current-target và target??
-        //Trong video ngta bảo là: Target: là cái mà mình vừa ấn vào. currentTarget là cái target gần nhất?
-        // model.addEventListener('click', function(e){
-        // if (e.target == e.currentTarget) toggleModal();
-        // });
+        iconClose.addEventListener('click', toggleModel);
+        buttonClose.addEventListener('click', toggleModel);
+        // var abc = document.querySelector(".header-model p").addEventListener('click', changes);
+        // model.addEventListener('click',toggleModel)
+        
+        model.addEventListener('click', function(a){
+            //model dc add sự kiện là click
+            //function(e): đây là khi 1 sự kiện tác động lên model: trong bài này có 2 sự kiện tác động lên model(phải là sự kiện khi được kích hoạt nó phải tác động lên MODEL mới được!!!!!)
+            //Còn nếu mà sự kiện khi được kích hoạt nhưng không tác động lên model thì không được
+            //là sự kiện: iconClose và buttonClose: 
+            //        iconClose.addEventListener('click', toggleModel);
+            //        buttonClose.addEventListener('click', toggleModel);
+            if (a.target == a.currentTarget) toggleModal();
+            //nếu sự kiện đó trùng với sự kiện ta đã add cho model thì chạy hàm toggleModal()
+            //ở đây: e.target = "click" và e.currentTarget = "click"(cái này ta đã add trước cho model ở phía trước hàm này)
+        });
+        
+        // target = phần tử kích hoạt sự kiện.
+
+        // currentTarget = phần tử lắng nghe sự kiện.
+        //Lúc này. model là phần tử đang lắng nghe sự kiện click, còn phần tử kích hoạt sự kiện ở đây là iconClose và buttonClose
+        // --> tức là: nếu mà ptu lắng nghe sự kiện == ptu kích hoạt sự kiện(ptu mà ta click vào)
+        // thì ta thực hiện chức năng toggleModel??
     </script>
 </body>
 </html>

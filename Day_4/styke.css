@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DADADA;
+}
+
+.container{
+    /* width: 85%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* phải set height thì mới dùng được thuộc tính align-items */
+}
+
+.list-img{
+    width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list-img .item-img{
+    width: 22%;
+    height: 200px;/* phài set height cho item-img và lấy width-img = 100% thì khi xét boder-radius mới k bị lỗi ảnh không bo góc */
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.item-img img{
+    width: 100%;
+    height: 100%;
+    transition: 0.25s;
+    object-fit: cover;
+    object-position: center;
+}
+
+.list-img .item-img:hover img{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.gallery{
+    background-color: rgb(0, 0, 0, 0.6);
+    position: fixed; 
+    /* vì gallery phụ thuộc vào trình duyệt */
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; 
+    /* chỉ là ẩn gallery, không hề xóa */
+    transform: scale(0.8); 
+    /* khi click vào thì gallery sẽ có kích thước từ nhỏ đến lớn --> trông cho nó mượt mà */
+    transition: 0.5s;
+}
+
+.gallery .images {
+    width: 70%;
+    height: 70%;
+    margin: auto;
+}
+
+.gallery .images img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.button-close{
+    font-size: 35px;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.control{
+    font-size: 35px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.control-right{
+    right: 20px;
+}
+
+.control-left{
+    left: 20px;
+}
+
+.show{
+    opacity: 1;
+    pointer-events: auto;
+
+}
+
+.hide{
+    display: none;
+}

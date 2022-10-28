@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styke.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="list-img">
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img1.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img2.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img3.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img4.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img5.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img6.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img7.jpeg" alt="">
+            </div>
+
+            <div class="item-img">
+                <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img8.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- Tại sao Gallery không bao cả màn hình?? -->
+    <div class="gallery">
+        <div class="button-close">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="images">
+            <img src="https://www.nodemy.vn/projects/html-css-js/image-gallery/img1.jpeg" alt="">
+        </div>
+        <div class="control-left control">
+            <i class="fa-solid fa-chevron-left"></i>
+        </div>
+        <div class="control-right control">
+            <i class="fa-solid fa-chevron-right"></i>
+        </div>
+    </div>
+
+    <script>
+        var images = document.querySelectorAll('.item-img img'); //vì có nhiều .item-img nên ta dùng selectorAll
+        var gallery = document.querySelector('.gallery');
+        var close = document.querySelector(".button-close");
+        var control_left = document.querySelector(".control-left");
+        var control_right = document.querySelector(".control-right");
+        var imgGallery = document.querySelector(".gallery .images img");
+
+        var currentIndex = 0;
+        function showImg(){
+            if(currentIndex == images.length - 1){
+                control_right.classList.add('hide');
+            }else{
+                control_right.classList.remove('hide');
+            }
+
+            if(currentIndex == 0){
+                control_left.classList.add('hide');
+            }else{
+                control_left.classList.remove('hide');
+            }
+
+            imgGallery.src = images[currentIndex].src; //để ảnh to trùng với ảnh nhỏ
+            gallery.classList.add('show');
+        }
+        // click vào ảnh nhỏ --> hiện ra ảnh to 
+        //c1:
+        // for(var i = 0; i < images.length; i++){
+        //     images[i].addEventListener('click', function(){
+        //         imgGallery.src = images[i].src;  // TẠI SAO CÁCH NÀY CÓ CHỖ NÀY SAI???
+        //         gallery.classList.add('show');
+        //     })
+        // }
+        //c2: 
+        images.forEach((item, index)=>{
+            item.addEventListener('click', function(){
+                currentIndex = index;
+                showImg();
+            })
+        })
+
+        //click vào iconClose --> gallery mất đi
+        close.addEventListener('click', function(){
+            gallery.classList.remove('show');
+        })
+
+        //Chuyển tiếp các hình ảnh trong gallery
+        control_left.addEventListener('click', function(){
+            if(currentIndex > 0){
+                currentIndex --;
+                showImg();
+            }
+        })
+
+        control_right.addEventListener('click', function(){
+                currentIndex ++;
+                showImg();
+        })
+      
+    </script>
+</body>
+</html>
