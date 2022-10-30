@@ -51,6 +51,13 @@ body{
     cursor: pointer;
 }
 
-.search .open{
+.search.open{ 
+    /* phải ghi liền như vậy để nó nhận diện rằng hai cái class này là một --> làm điều này thì mới giúp ta add class="open" vào mà class="search" vẫn được áp dụng theo */
     width: 400px;
 }
+/* 1 element có 2 class mà cùng css cho một thuộc tính --> không thể */
+
+/* hoặc ta dùng:
+.open{
+    width: 400px;
+} */
