@@ -35,7 +35,7 @@ function checkEmptyError(listInput){
     return isEmptyError;
 }
 
-//Kiểm tra form email có hợp lệ không
+//Kiểm tra form email có hợp lệ không -> không
 function checkEmailError(input){
     let regexEmail = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     //redex: biểu thức chính quy --> regexEmail: biểu thức chính quy dạng email
