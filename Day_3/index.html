@@ -53,17 +53,17 @@
         // var abc = document.querySelector(".header-model p").addEventListener('click', changes);
         // model.addEventListener('click',toggleModel)
         
-        model.addEventListener('click', function(a){
-            //model dc add sự kiện là click
-            //function(e): đây là khi 1 sự kiện tác động lên model: trong bài này có 2 sự kiện tác động lên model(phải là sự kiện khi được kích hoạt nó phải tác động lên MODEL mới được!!!!!)
-            //Còn nếu mà sự kiện khi được kích hoạt nhưng không tác động lên model thì không được
-            //là sự kiện: iconClose và buttonClose: 
-            //        iconClose.addEventListener('click', toggleModel);
-            //        buttonClose.addEventListener('click', toggleModel);
-            if (a.target == a.currentTarget) toggleModal();
-            //nếu sự kiện đó trùng với sự kiện ta đã add cho model thì chạy hàm toggleModal()
-            //ở đây: e.target = "click" và e.currentTarget = "click"(cái này ta đã add trước cho model ở phía trước hàm này)
-        });
+        // model.addEventListener('click', function(a){
+        //     //model dc add sự kiện là click
+        //     //function(e): đây là khi 1 sự kiện tác động lên model: trong bài này có 2 sự kiện tác động lên model(phải là sự kiện khi được kích hoạt nó phải tác động lên MODEL mới được!!!!!)
+        //     //Còn nếu mà sự kiện khi được kích hoạt nhưng không tác động lên model thì không được
+        //     //là sự kiện: iconClose và buttonClose: 
+        //     //        iconClose.addEventListener('click', toggleModel);
+        //     //        buttonClose.addEventListener('click', toggleModel);
+        //     // if (a.target == a.currentTarget) toggleModal();
+        //     //nếu sự kiện đó trùng với sự kiện ta đã add cho model thì chạy hàm toggleModal()
+        //     //ở đây: e.target = "click" và e.currentTarget = "click"(cái này ta đã add trước cho model ở phía trước hàm này)
+        // });
         
         // target = phần tử kích hoạt sự kiện.
 
